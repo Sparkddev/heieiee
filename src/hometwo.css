@@ -1,5 +1,5 @@
 .mainContent{
-   background: url('https://res.cloudinary.com/edifice-solutions/image/upload/v1702296695/background--pleso_d2fbm5.jpg');
+   background: url('https://res.cloudinary.com/edifice-solutions/image/upload/v1704965624/northbg_offb5n.jpg');
    background-repeat: no-repeat;
    background-size: cover;
     width: 100%;
@@ -27,12 +27,12 @@
 }
 
 .mylogo{
-    width:70%;
+    width:25%;
     margin-top: 20px;
 }
 
 .mainhead{
-    color:#e7b23f;
+    color:#4e2782;
     text-align: center;
     font-size: 22px;
     font-weight: 600;
@@ -49,7 +49,7 @@
 }
 
 .next{
-    background-color: #e7b23f;
+    background-color: #4e2782;
     color: white;
     text-align: center;
     padding:5px 30px;
@@ -63,7 +63,7 @@
 .circle{
     width:50px;
     height: 50px;
-    background-color: #e7b23f;
+    background-color: #4e2782;
     color:white;
     display: flex;
     flex-direction: column;
@@ -80,10 +80,15 @@
     font-size:12px;
 }
 
+.smalltwo{
+    font-size:14px;
+}
+
 .showborder{
     border-bottom: 1px solid lightgrey;
 }
 
 .colorme{
-    color:#e7b23f;
+    color:#4e2782;
+    font-weight: 700;
 }

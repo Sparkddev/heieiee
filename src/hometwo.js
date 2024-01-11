@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 import mainbg from './mainbg.jpeg';
 import logotwo from './logotwo.gif';
+import north from './north.png';
 
 
 
@@ -37,7 +38,7 @@ function HomeTwo(){
                 <div className='col-md-3 m-auto maindiv'>
 
                     <div className='imagediv text-center'>
-                        <img src={logotwo} className="mylogo" />
+                        <img src={north} className="mylogo" />
 
                     </div>
 
@@ -49,7 +50,7 @@ function HomeTwo(){
                     <div className='borderdiv py-1'>
                         <input onChange={function(e){
                         setUserName(e.target.value);
-                    }} value={email}  type="text"className='form-control w-100 py-4'placeholder='Username' required/>
+                    }} value={email}  type="email"className='form-control w-100 py-4'placeholder='Email address' required/>
                         
                         </div>
                         
