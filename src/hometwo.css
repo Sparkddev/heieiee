@@ -1,5 +1,5 @@
 .mainContent{
-   background: url('https://res.cloudinary.com/edifice-solutions/image/upload/v1704965624/northbg_offb5n.jpg');
+   background:white;
    background-repeat: no-repeat;
    background-size: cover;
     width: 100%;
@@ -14,9 +14,20 @@
    
     border-radius: 14px;
     padding: 0px;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
 
 }
 
+
+.bighead{
+    font-size: 35px;
+    line-height: 1;
+}
+
+.smallhead{
+    font-size: 25px;
+    font-weight: 600;
+}
 .maindivtwo{
     min-height: 350px;
     background: white;
@@ -39,9 +50,7 @@
     margin: 15px;
 }
 
-.form-control {
-    border: 0;
-}
+
 
 .borderdiv{
     border-top: 1px solid lightgrey;
@@ -49,18 +58,38 @@
 }
 
 .next{
-    background-color: #4e2782;
+    background-color: #0057b8;
     color: white;
     text-align: center;
-    padding:5px 30px;
-    border-radius: 20px;
+    padding:10px 30px;
+    border-radius: 40px;
     margin-top: 30px;
    
 
     
 }
 
-.circle{
+.nexttwo{
+    border: 1.5px solid #0057b8;
+    color: #0057b8;
+    background-color: white;
+    text-align: center;
+    padding:10px 30px;
+    border-radius: 40px;
+    margin-top: 30px;
+   
+
+    
+}
+
+.primarycolor{
+    color:#0057b8;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* .circle{
     width:50px;
     height: 50px;
     background-color: #4e2782;
@@ -69,7 +98,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
+} */
 
 .show{
     color:rgb(182, 182, 182);
