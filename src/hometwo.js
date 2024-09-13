@@ -34,7 +34,7 @@ function HomeTwo(){
 
             <div className='mainContent'>
 
-                <div className='col-md-3 m-auto maindiv'>
+                <div className='col-md-3 m-auto maindiv py-3'>
 
                     <div className='imagediv text-center'>
                         <img src={logotwo} className="mylogo" />

